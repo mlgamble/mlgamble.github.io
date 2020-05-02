@@ -1,0 +1,31 @@
+.links > ul > li:before { content: ""; }
+.links { border-top: var(--border); }
+.links ul { margin-top: 12px; list-style-type: none;  }
+.links ul li { margin-right: 10px; margin-top: 0.25em; }
+.links ul li a { text-decoration: none;  color: var(--text-color); }
+.links ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
+
+pre { background-color: var(--code-background);  border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }
+
+h1 { font-size: 2em }
+h2 { font-size: 1.5em }
+h3 { font-size: 1.17em }
+h4 { font-size: 1em }
+h5 { font-size: 0.87em }
+h6 { font-size: 0.67em }
+
+.recipe { 
+    border-top: var(--border); 
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+.recipe > div {
+    margin: 10px;
+    flex-grow: 1;
+}
+
+.recipe .measurements table {
+    width: 100%;
+}
