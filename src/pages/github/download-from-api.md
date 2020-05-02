@@ -1,8 +1,8 @@
 ---
-layout: documentation
-categories: [ github ]
+layout: Documentation
 ---
 ### Set environment variable
+
 ```bash
 # GitHub Personal Access Token
 PAT=<git repo:read token>

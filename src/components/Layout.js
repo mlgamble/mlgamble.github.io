@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import "../assets/sass/main.scss"
 
-const Layout = (props) => {
+const Layout = ({dir, children}) => {
     return (
         <StaticQuery
             query={graphql`
@@ -24,10 +24,10 @@ const Layout = (props) => {
                 }
             `}
         render={data => (
-            <div class='container'>
-                <Header refs={data.site.siteMetadata.header_refs}/>
+            <div className='container'>
+                <Header refs={data.site.siteMetadata.header_refs} dir={dir}/>
                 <main>
-                    {props.child}
+                    {children}
                 </main>
                 <Footer refs={data.site.siteMetadata.footer_refs}/>
             </div>

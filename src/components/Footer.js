@@ -4,7 +4,7 @@ import "../assets/sass/main.scss"
 const Footer = (props) => {
     const links = [];
     props.refs.forEach((ref) => {
-        links.push(<a href={ref.ref}>{ref.name}</a>);
+        links.push(<a key={ref.ref} href={ref.ref}>{ref.name}</a>);
     });
 
     return (

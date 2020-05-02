@@ -1,4 +1,8 @@
 footer > a { margin-left: 10px; }
+
+.menu { display: flex; flex-direction: row-reverse; justify-content: space-between; }
+.directory { order: 2; }
+
 .links > ul > li:before { content: ""; }
 .links { border-top: var(--border); }
 .links ul { margin-top: 12px; list-style-type: none;  }
