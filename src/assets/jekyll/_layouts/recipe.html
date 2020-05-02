@@ -1,0 +1,30 @@
+---
+layout: post
+---
+<h1 class="post-title">{{page.date | date_to_long_string}}</h1>
+<a href="{{page.recipe}}">base recipe</a>
+<div class="recipe">
+    <div class="measurements">
+        <b>Measurements</b>
+        <table>
+            {%- for measurement in page.measurements -%}
+            <tr>
+                <td>{{ measurement.thing }}</td>
+                <td>\({{ measurement.amount }}\)</td>
+                <td>{{ measurement.unit }}</td>
+            </tr>
+            {%- endfor -%}
+        </table>
+    </div>
+    <div class="content">
+        {{content}}
+    </div>
+</div>
+<div class="derivatives">
+    <h3>Recipes that use this:</h3>
+    {%- for post in site.posts -%} 
+        {%- if post.recipe == page.url -%}
+            <a href="{{post.url}}">{{post.title}}</a>
+        {%- endif -%}
+    {%- endfor -%}
+</div>
