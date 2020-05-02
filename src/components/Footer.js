@@ -1,9 +1,17 @@
 import React from "react"
 import "../assets/sass/main.scss"
 
-export default function Footer() {
+const Footer = (props) => {
+    const links = [];
+    props.refs.forEach((ref) => {
+        links.push(<a href={ref.ref}>{ref.name}</a>);
+    });
+
     return (
         <footer>
+            {links}
         </footer>
     );
 }
+
+export default Footer
