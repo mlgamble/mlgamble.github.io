@@ -14,7 +14,7 @@ const Files = ({data}) => {
                 <h2>Jumps</h2>
                 <div>
                     <ul>
-                        {directories.map((dir) => <li key={dir}><a href={`#${dir}`}>{dir}</a></li>)}
+                        {directories.map((dir) => <li key={dir}><a href={`#${dir}`}>{`/${dir}`}</a></li>)}
                     </ul>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 ---
-layout: recipe
-categories: [lentils, curry, '1']
+layout: Recipe
 recipe: '/lentils/stew/1/lentils'
 measurements:
     - thing: ginger
