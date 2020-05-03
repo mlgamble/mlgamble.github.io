@@ -7,7 +7,7 @@ const Recipe = ({data}) => {
     const frontmatter = post.frontmatter
     return (
         <Layout dir={`/${post.parent.relativeDirectory}`}>
-            <h1 class="post-title">{frontmatter.recipe}</h1>
+            <h1 class="post-title">{post.parent.name}</h1>
             <a href={frontmatter.recipe}>base recipe</a>
             <div class="recipe">
                 <div class="measurements">
@@ -16,7 +16,7 @@ const Recipe = ({data}) => {
                         {frontmatter.measurements.map((measurement) => (
                             <tr>
                             <td>{measurement.thing}</td>
-                            <td>\({measurement.amount}\)</td>
+                            <td>{measurement.amount}</td>
                             <td>{measurement.unit}</td>
                         </tr>
                         ))}
@@ -37,6 +37,7 @@ export const query = graphql`
         parent {
             ... on File {
                 relativeDirectory
+                name
             }
         }
         frontmatter {
