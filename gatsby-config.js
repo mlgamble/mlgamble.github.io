@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     header_refs: [
-      {name: '/', ref: '/Home'},
+      {name: '/', ref: '/'},
       {name: '/files', ref: '/Files'},
       {name: '/jellyfin', ref: '/Jellyfin'}
     ],
