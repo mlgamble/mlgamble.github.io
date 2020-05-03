@@ -2,13 +2,14 @@ import React from 'react'
 import { Netmask } from 'netmask'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-const isReachablePromise = (host, port, ms) => {
+const isReachablePromise = (scheme, host, port, ms) => {
     let controller = new AbortController();
     setTimeout(() => controller.abort(), ms);
     return new Promise((resolve, reject) => {
         try {
-            fetch(`http://${host}:${port}`, {
+            fetch(`${scheme}://${host}:${port}`, {
                 mode: 'no-cors',
+                referrerPolicy: 'unsafe-url',
                 signal: controller.signal})
                 .then(() => resolve(), () => reject())
                 .catch(() => reject());
@@ -18,10 +19,10 @@ const isReachablePromise = (host, port, ms) => {
     }).then(() => host, () => null);
 }
 
-const FindService = async (netmask, port, ms) => {
+const FindService = async (scheme, netmask, port, ms) => {
     const block = new Netmask(netmask);
     const reachablePromises = [];
-    block.forEach((host) => reachablePromises.push(isReachablePromise(host, port, ms)));
+    block.forEach((host) => reachablePromises.push(isReachablePromise(scheme, host, port, ms)));
 
     return Promise.all(reachablePromises);
 }
@@ -33,7 +34,7 @@ class RedirectToService extends React.Component {
     }
 
     componentDidMount() {
-        FindService(this.props.netmask, this.props.port, this.props.ms ?? 2000)
+        FindService(this.props.scheme ?? 'https', this.props.netmask, this.props.port, this.props.ms ?? 3000)
         .then((hosts) => 
             this.setState({
                 loading: false,
@@ -48,7 +49,7 @@ class RedirectToService extends React.Component {
         } else if (this.state.host == null) {
             return <div>Not Found</div>
         } else {
-            return <Router><Route component={() => window.location = `http://${this.state.host}:${this.props.port}/`} /></Router>
+            return <Router><Route component={() => window.location = `${this.props.scheme ?? 'https'}://${this.state.host}:${this.props.port}/`} /></Router>
         }
     }
 }
