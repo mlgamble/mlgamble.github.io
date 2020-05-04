@@ -15,7 +15,6 @@
     "deploy": "gatsby build && { ls .. | grep -v '.gatsby-src' | xargs -I{} rm -r ../{} ; } && cp -r public/* ../ && git add .."
   },
   "dependencies": {
-    "@types/node": "^13.13.4",
     "gatsby": "^2.21.0",
     "gatsby-plugin-sass": "^2.3.0",
     "gatsby-remark-mathjax": "^1.0.0",

@@ -4,6 +4,8 @@ layout: Documentation
 
 |You Want|You Press|
 |--------|---------|
+|eject   |0        |
+|mute    |4        |
 |left    |yellow   |
 |right   |blue     |
 |up      |3        |
