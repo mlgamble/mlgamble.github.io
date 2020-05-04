@@ -3,7 +3,6 @@ import { Netmask } from 'netmask'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const isReachablePromise = (scheme, host, port, ms) => {
-    /*
     let controller = new AbortController();
     setTimeout(() => controller.abort(), ms);
     return new Promise((resolve, reject) => {
@@ -17,11 +16,7 @@ const isReachablePromise = (scheme, host, port, ms) => {
         } catch(err) {
             reject();
         }
-    }).then(() => host, () => null);*/
-
-    const dgram = require('dgram');
-    const data = new Buffer("Hello world");
-    const client = dgram.createSocket("udp4");
+    }).then(() => host, () => null);
 }
 
 const FindService = async (scheme, netmask, port, ms) => {
