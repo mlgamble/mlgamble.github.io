@@ -24,3 +24,4 @@ jobs:
       with:
         access-token: ${{ secrets.ACCESS_TOKEN }}
         deploy-repo: mlgamble.github.io
+        deploy-branch: master
