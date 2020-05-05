@@ -1,6 +1,6 @@
 ---
 layout: Recipe
-recipe: '/lentils/stew/1/lentils'
+recipe: '/lentils/lentils'
 measurements:
     - thing: ginger
       amount: '*'
