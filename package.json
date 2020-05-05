@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && { ls .. | grep -v '.gatsby-src' | xargs -I{} rm -r ../{} ; } && cp -r public/* ../ && git add .."
+    "deploy": "gatsby build && yarn node ./scripts/deploy-to-github.js"
   },
   "dependencies": {
     "gatsby": "^2.21.0",
@@ -30,6 +30,7 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "prettier": "2.0.5"
   },
   "repository": {
