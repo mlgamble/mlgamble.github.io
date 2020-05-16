@@ -7,7 +7,7 @@ const isReachablePromise = (scheme, host, port, ms) => {
     setTimeout(() => controller.abort(), ms);
     return new Promise((resolve, reject) => {
         try {
-            fetch(`${scheme}://${host}:${port}`, {
+            fetch(`${scheme}://${host}.sslip.io:${port}`, {
                 mode: 'no-cors',
                 referrerPolicy: 'unsafe-url',
                 signal: controller.signal})
@@ -34,7 +34,7 @@ class RedirectToService extends React.Component {
     }
 
     componentDidMount() {
-        FindService(this.props.scheme ?? 'https', this.props.netmask, this.props.port, this.props.ms ?? 3000)
+        FindService(this.props.scheme ?? 'https', this.props.netmask, this.props.port, this.props.ms ?? 5000)
         .then((hosts) => 
             this.setState({
                 loading: false,
