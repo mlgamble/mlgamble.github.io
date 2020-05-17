@@ -35,5 +35,12 @@ module.exports = {
         ]
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        start_url: "/",
+        icon: "static/wallis.ico"
+      },
+    },
   ],
 }
