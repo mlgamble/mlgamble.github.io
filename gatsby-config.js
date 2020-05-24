@@ -9,7 +9,6 @@ module.exports = {
     header_refs: [
       {name: '/', ref: '/'},
       {name: '/files', ref: '/Files'},
-      {name: '/jellyfin', ref: '/Jellyfin'}
     ],
     footer_refs: [
       {name: 'github', ref: 'https://github.com/mlgamble'},
