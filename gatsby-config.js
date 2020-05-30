@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     header_refs: [
       {name: '/', ref: '/'},
-      {name: '/files', ref: '/Files'},
+      {name: '/files', ref: '/files'},
     ],
     footer_refs: [
       {name: 'github', ref: 'https://github.com/mlgamble'},
