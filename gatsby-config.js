@@ -41,6 +41,5 @@ module.exports = {
         icon: "static/wallis.ico"
       },
     },
-    `gatsby-plugin-netlify-cms`,
   ],
 }
