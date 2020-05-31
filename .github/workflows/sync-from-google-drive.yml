@@ -30,5 +30,3 @@ jobs:
         private-key: ${{ secrets.PRIVATE_KEY }}
         public-key: ${{ secrets.PUBLIC_KEY }}
         command: 'git checkout develop && git add . && git commit -m "File updates from Google Drive" && git push'
-    - name: "Trigger Gatsby build"
-      run: curl -XPOST -u "${{ secrets.USERNAME }}:${{ secrets.ACCESS_TOKEN }}" -H 'Accept: application/vnd.github.everest-preview+json' -H 'Content-Type: application/json' https://api.github.com/repos/mlgamble/mlgamble.github.io/dispatches --data '{"event_type": "build_application"}'
