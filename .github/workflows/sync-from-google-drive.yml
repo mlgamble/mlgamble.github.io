@@ -30,3 +30,9 @@ jobs:
         private-key: ${{ secrets.PRIVATE_KEY }}
         public-key: ${{ secrets.PUBLIC_KEY }}
         command: 'git checkout develop && git add . && git commit -m "File updates from Google Drive" && git push'
+    - name: Trigger rebuild
+      run: |
+        curl -L -XPOST \
+        -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
+        "https://api.github.com/repos/$GITHUB_REPOSITORY/dispatches" \
+        -d '{"event_type": "trigger-rebuild"}' 
