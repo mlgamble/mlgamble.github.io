@@ -35,17 +35,20 @@ measurements:
       unit: minute
 ---
 Prep garlic/ginger.
-Prep onion while heating pot. Fry onion, garlic and ginger with butter and oil
+Prep onion while heating pot. Fry onion, garlic and ginger with butter and oil. 
 <br/>
-After frying, add tomato paste and cook a min longer (optionally add any other spices you might want now)
+After frying, add tomato paste and cook a min longer (optionally add any other spices you might want now). 
 <br/>
-Add water, curry, lentils and coconut milk
+Add water, curry, lentils and coconut milk. 
 <br/>
-Prep veggies
+Prep veggies. 
 <br/>
-Add veggies throughout depending on how long they need to soften
+Add veggies throughout depending on how long they need to soften:
 - carrots: ~10 min
 - tomatoes: ~5min
 - spinach: after done cooking
 <br/>
-Keep salt on hand to season when done: might need several tsp
+Keep salt on hand to season when done: might need several tsp. 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE0NTY5MjQwMjVdfQ==
+-->
