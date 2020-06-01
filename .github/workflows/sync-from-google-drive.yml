@@ -11,28 +11,37 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  pull-to-local:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-    - uses: mlgamble/action-google-drive@0.0.1
+    - name: Pull Google Drive files
+      uses: mlgamble/action-google-drive@0.0.1
       with:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
         action: download
         args: '-ignore-times mlgamble.github.io src/pages'
         google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
         google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+    - name: Check for git changes
+      id: git-changes
+      run: |
+        echo "::set-output name=changes::`git status --porcelain | wc -l | xargs`"
     - uses: mlgamble/action-git@0.0.1
+      if: ${{ steps.git-changes.outputs.changes > 0 }}
       with:
         private-key: ${{ secrets.PRIVATE_KEY }}
         public-key: ${{ secrets.PUBLIC_KEY }}
-        command: 'git checkout develop && git add . && git commit -m "File updates from Google Drive" && git push'
+        command: 'git add . && git commit -m "File updates from Google Drive" && git push'
     - name: Trigger rebuild
+      if: ${{ steps.git-changes.outputs.changes > 0 }}
       run: |
         curl -L -XPOST \
         -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
         "https://api.github.com/repos/$GITHUB_REPOSITORY/dispatches" \
         -d '{"event_type": "trigger-rebuild"}' 
+  trigger-rebuild:
+    runs-on: ubuntu-latest
