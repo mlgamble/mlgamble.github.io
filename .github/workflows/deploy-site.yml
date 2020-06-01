@@ -7,6 +7,11 @@ name: Deploy Site
 on:
   push:
     branches: [ develop ]
+    paths: 
+      - 'src/**'
+      - 'static/**'
+      - 'gatsby*js'
+      - 'package.json'
   repository_dispatch:
     types: [trigger-rebuild]
     
