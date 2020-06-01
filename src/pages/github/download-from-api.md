@@ -41,3 +41,6 @@ awk '{print $NF}' | paste - - - | \
 awk '{system("grep -l "$1" *")} {print $2"?token="$3}' | paste - - | \
 xargs -L1 curl -Lo
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTY4MDU2OTc2OF19
+-->
