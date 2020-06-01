@@ -1,0 +1,2 @@
+![Sync from Google Drive](https://github.com/mlgamble/mlgamble.github.io/workflows/Sync%20from%20Google%20Drive/badge.svg)
+![Deploy Site](https://github.com/mlgamble/mlgamble.github.io/workflows/Deploy%20Site/badge.svg)
