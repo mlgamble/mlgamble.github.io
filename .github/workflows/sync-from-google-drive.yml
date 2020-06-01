@@ -34,7 +34,6 @@ jobs:
       if: ${{ steps.git-changes.outputs.changes > 0 }}
       with:
         private-key: ${{ secrets.PRIVATE_KEY }}
-        public-key: ${{ secrets.PUBLIC_KEY }}
         command: 'git add . && git commit -m "File updates from Google Drive" && git push'
     - name: Trigger rebuild
       if: ${{ steps.git-changes.outputs.changes > 0 }}
