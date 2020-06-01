@@ -32,7 +32,9 @@ jobs:
     - name: Check for git changes
       id: git-changes
       run: |
-        echo "::set-output name=changes::`git status --porcelain | wc -l | xargs`"
+        CHANGES=`git status --porcelain | wc -l | xargs`
+        echo "::set-output name=changes::$CHANGES"
+        [[ $CHANGES -gt 0 ]] && echo "Changes found. Will continue." || echo "No changes found. Ending action." 
     - name: Push changes to repo
       if: ${{ steps.git-changes.outputs.changes > 0 }}
       run: |
