@@ -47,8 +47,10 @@ Add veggies throughout depending on how long they need to soften:
 - carrots: ~10 min
 - tomatoes: ~5min
 - spinach: after done cooking
+
 <br/>
 Keep salt on hand to season when done: might need several tsp. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTY5MjQwMjVdfQ==
+eyJoaXN0b3J5IjpbLTE5NzA0MzQ0NDMsLTE0NTY5MjQwMjVdfQ
+==
 -->
